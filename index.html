@@ -1,35 +1,111 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Mi Sitio Personal</title>
-  <meta charset="utf-8" />
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mi Página Personal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Open Sans', sans-serif;
+      color: #222;
+      background-color: #fff;
+    }
+    header {
+      background: #f4f4f4;
+      padding: 2rem;
+      text-align: center;
+    }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #444;
+      font-weight: bold;
+    }
+    section {
+      padding: 4rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .hero {
+      background: url('https://via.placeholder.com/1400x600') center/cover no-repeat;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+      font-size: 2rem;
+      font-weight: bold;
+    }
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      font-family: 'Playfair Display', serif;
+    }
+    .media-links ul {
+      list-style: none;
+      padding-left: 1rem;
+    }
+    .media-links li {
+      margin-bottom: 0.5rem;
+    }
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 2rem;
+    }
+  </style>
 </head>
 <body>
   <header>
     <h1>Tu Nombre</h1>
     <nav>
-      <a href="#about">Sobre mí</a>
+      <a href="#bio">Biografía</a>
       <a href="#media">Multimedia</a>
       <a href="#contact">Contacto</a>
     </nav>
   </header>
-  
-  <section id="about">
-    <h2>Biografía</h2>
-    <p>Tu historia, tu misión, tus logros...</p>
+
+  <div class="hero">
+    Bienvenido a mi sitio personal
+  </div>
+
+  <section id="bio">
+    <h2 class="section-title">Biografía</h2>
+    <p>
+      Soy un autor, conferencista y pensador. Aquí puedes encontrar mis libros, conferencias, entrevistas y más sobre mi trabajo e ideas.
+    </p>
   </section>
-  
-  <section id="media">
-    <h2>Videos / Podcast / Libros</h2>
+
+  <section id="media" class="media-links">
+    <h2 class="section-title">Medios y Apariciones</h2>
     <ul>
-      <li><a href="https://youtube.com">Canal de YouTube</a></li>
-      <li><a href="https://spotify.com">Spotify Podcast</a></li>
+      <li><a href="https://youtube.com" target="_blank">Canal de YouTube</a></li>
+      <li><a href="https://spotify.com" target="_blank">Podcast en Spotify</a></li>
+      <li><a href="https://amazon.com" target="_blank">Mis Libros en Amazon</a></li>
     </ul>
   </section>
-  
+
+  <section id="contact">
+    <h2 class="section-title">Contacto</h2>
+    <p>Puedes contactarme a través de correo electrónico: <a href="mailto:correo@tusitio.com">correo@tusitio.com</a></p>
+  </section>
+
   <footer>
-    <p>© 2025 Tu Nombre. Todos los derechos reservados.</p>
+    © 2025 Tu Nombre. Todos los derechos reservados.
   </footer>
 </body>
 </html>
