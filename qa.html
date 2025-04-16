@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Encuentra respuestas a preguntas comunes o envía las tuyas en mi sección de Q&A." />
+  <meta name="keywords" content="qa, preguntas, respuestas, dudas" />
+  
+  <title>Q&A | Mi Sitio Personal</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header>
+    <nav class="navbar" aria-label="Navegación principal">
+      <div class="logo">Mi Sitio</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="qa.html" aria-current="page">Q&A</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Abrir menú">☰</button>
+      <button class="theme-toggle" aria-label="Cambiar tema">🌙</button>
+    </nav>
+  </header>
+
+  <section class="hero" data-aos="fade-up">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <h1 data-aos="zoom-in">Preguntas y Respuestas</h1>
+      <p data-aos="fade-up" data-aos-delay="200">Encuentra respuestas a dudas comunes o envía tus preguntas.</p>
+      <a href="#faq" class="btn" data-aos="fade-up" data-aos-delay="400">Explorar FAQ</a>
+    </div>
+    <div class="hero-animation" id="lottie-animation"></div>
+  </section>
+
+  <main class="container">
+    <section class="faq" data-aos="fade-up">
+      <h2>Preguntas Frecuentes</h2>
+      <div class="faq-list">
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+          <button class="faq-question">¿Qué temas cubre tu blog?</button>
+          <div class="faq-answer">
+            <p>Cubro temas como filosofía, ciencia, sociedad, tecnología y cultura, con un enfoque reflexivo y accesible.</p>
+          </div>
+        </div>
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+          <button class="faq-question">¿Cómo puedo colaborar contigo?</button>
+          <div class="faq-answer">
+            <p>Puedes enviarme un mensaje a través de la página de contacto para discutir colaboraciones o ideas.</p>
+          </div>
+        </div>
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+          <button class="faq-question">¿Respondes todas las preguntas enviadas?</button>
+          <div class="faq-answer">
+            <p>Intento responder la mayoría, pero priorizo las preguntas más comunes o relevantes para incluirlas aquí.</p>
+          </div>
+        </div>
+      </div>
+      <a href="contacto.html" class="btn faq-cta" data-aos="zoom-in">Enviar una Pregunta</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Mi Sitio Personal</p>
+    <button class="scroll-top" aria-label="Volver arriba">↑</button>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="js/lottie-player.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

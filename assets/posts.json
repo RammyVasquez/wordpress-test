@@ -1,0 +1,20 @@
+[
+  {
+    "title": "La Filosofía en el Siglo XXI",
+    "date": "2025-04-15",
+    "summary": "Explorando cómo la filosofía sigue siendo relevante en la era digital.",
+    "image": "assets/images/arquitectura.jpg"
+  },
+  {
+    "title": "Avances en Ciencia y Tecnología",
+    "date": "2025-04-10",
+    "summary": "Un repaso a las innovaciones que están cambiando el mundo.",
+    "image": "assets/images/tech.jpg"
+  },
+  {
+    "title": "Sociedad y Cultura Moderna",
+    "date": "2025-04-05",
+    "summary": "Reflexiones sobre los desafíos culturales de hoy.",
+    "image": "assets/images/culture.jpg"
+  }
+]

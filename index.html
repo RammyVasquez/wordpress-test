@@ -1,79 +1,94 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explora mi sitio personal con blog, contacto y Q&A sobre filosofía, ciencia y más." />
+  <meta name="keywords" content="blog, contacto, qa, filosofía, ciencia, sociedad" />
   <title>Inicio | Mi Sitio Personal</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Inter', sans-serif; background: #f9f9f9; color: #333; line-height: 1.6; }
-    header { background: #222; color: white; padding: 1.5rem 2rem; }
-    header h1 { font-size: 1.8rem; }
-    nav { margin-top: 0.5rem; }
-    nav a { color: #ccc; margin-right: 1rem; text-decoration: none; }
-    nav a:hover { color: white; }
-    .hero {
-      background: url('https://source.unsplash.com/1600x600/?nature,philosophy') no-repeat center/cover;
-      height: 400px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
-    }
-    .hero h2 { font-size: 3rem; }
-    .container { max-width: 960px; margin: 2rem auto; padding: 0 1rem; }
-    section { margin-bottom: 2rem; }
-    h3 { margin-bottom: 1rem; font-size: 1.5rem; }
-    footer { background: #222; color: #ccc; text-align: center; padding: 1rem; }
-    .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-    .card { background: white; padding: 1.5rem; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-    .card h4 { margin-bottom: 0.5rem; }
-    .card p { color: #666; }
-  </style>
+  <!-- Google Fonts (debería funcionar, pero verifica) -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<!-- AOS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<!-- Swiper -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+<script src="js/swiper-bundle.min.js"></script>
+<!-- Lottie Player -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-player/2.0.4/lottie-player.min.js"></script>
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
   <header>
-    <h1>Mi Sitio Personal</h1>
-    <nav>
-      <a href="index.html">Inicio</a>
-      <a href="contacto.html">Contacto</a>
-      <a href="blog.html">Blog</a>
-      <a href="qa.html">Q&A</a>
+    <nav class="navbar" aria-label="Navegación principal">
+      <div class="logo">Mi Sitio</div>
+      <ul class="nav-links">
+        <li><a href="index.html" aria-current="page">Inicio</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="qa.html">Q&A</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Abrir menú">☰</button>
+      <button class="theme-toggle" aria-label="Cambiar tema">🌙</button>
     </nav>
   </header>
 
-  <div class="hero">
-    <h2>Explora ideas, escribe y conecta</h2>
-  </div>
+  <section class="hero" data-aos="fade-up">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <h1 data-aos="zoom-in">Explora un Mundo de Ideas</h1>
+      <p data-aos="fade-up" data-aos-delay="200">Conecta con artículos, preguntas y reflexiones sobre filosofía, ciencia y sociedad.</p>
+      <a href="contacto.html" class="btn" data-aos="fade-up" data-aos-delay="400">Únete a la Conversación</a>
+    </div>
+    <div class="hero-animation" id="lottie-animation"></div>
+  </section>
 
   <main class="container">
-    <section>
-      <h3>Bienvenido</h3>
-      <p>Este es un sitio web personal inspirado en la estructura de jordanbpeterson.com, con un enfoque moderno, limpio y adaptable.</p>
-    </section>
-    <section>
-      <h3>Destacados</h3>
-      <div class="card-grid">
-        <div class="card">
-          <h4>Contacto</h4>
-          <p>Envía un mensaje o haz una consulta.</p>
+    <section class="featured" data-aos="fade-up">
+      <h2>Destacados</h2>
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="card">
+              <div class="card-icon" id="lottie-contact"></div>
+              <h3>Contacto</h3>
+              <p>Envía un mensaje o haz una consulta directa.</p>
+              <a href="contacto.html" class="card-link">Ir a Contacto</a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card">
+              <div class="card-icon" id="lottie-blog"></div>
+              <h3>Blog</h3>
+              <p>Artículos sobre filosofía, ciencia y más.</p>
+              <a href="blog.html" class="card-link">Explorar Blog</a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card">
+              <div class="card-icon" id="lottie-qa"></div>
+              <h3>Preguntas y Respuestas</h3>
+              <p>Resuelve dudas o comparte las tuyas.</p>
+              <a href="qa.html" class="card-link">Ver Q&A</a>
+            </div>
+          </div>
         </div>
-        <div class="card">
-          <h4>Blog</h4>
-          <p>Lee artículos recientes sobre filosofía, ciencia, sociedad y más.</p>
-        </div>
-        <div class="card">
-          <h4>Preguntas y Respuestas</h4>
-          <p>Encuentra respuestas a preguntas comunes o deja las tuyas.</p>
-        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
       </div>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Mi Sitio Personal</p>
+    <p>© 2025 Mi Sitio Personal</p>
+    <button class="scroll-top" aria-label="Volver arriba">↑</button>
   </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>

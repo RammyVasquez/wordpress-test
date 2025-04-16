@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Lee artículos sobre filosofía, ciencia, sociedad y más en mi blog personal." />
+  <meta name="keywords" content="blog, filosofía, ciencia, sociedad, artículos" />
+  <title>Blog | Mi Sitio Personal</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+  <!-- Swiper -->
+  <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header>
+    <nav class="navbar" aria-label="Navegación principal">
+      <div class="logo">Mi Sitio</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="blog.html" aria-current="page">Blog</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="qa.html">Q&A</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Abrir menú">☰</button>
+      <button class="theme-toggle" aria-label="Cambiar tema">🌙</button>
+    </nav>
+  </header>
+
+  <section class="hero" data-aos="fade-up">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <h1 data-aos="zoom-in">Mi Blog</h1>
+      <p data-aos="fade-up" data-aos-delay="200">Explora artículos sobre filosofía, ciencia, sociedad y más.</p>
+      <a href="#posts" class="btn" data-aos="fade-up" data-aos-delay="400">Leer Ahora</a>
+    </div>
+    <div class="hero-animation" id="lottie-animation"></div>
+  </section>
+
+  <main class="container">
+    <section class="posts" data-aos="fade-up">
+      <h2>Publicaciones Recientes</h2>
+      <div class="swiper-container" id="posts">
+        <div class="swiper-wrapper"></div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Mi Sitio Personal</p>
+    <button class="scroll-top" aria-label="Volver arriba">↑</button>
+  </footer>
+
+ <!-- Scripts -->
+ <script src="js/aos.js"></script>
+ <script src="js/swiper-bundle.min.js"></script>
+ <script src="js/lottie-player.min.js"></script>
+ <script src="js/main.js"></script>
+</body>
+</html>
