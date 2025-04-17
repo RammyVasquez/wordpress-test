@@ -3,92 +3,138 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Explora mi sitio personal con blog, contacto y Q&A sobre filosofía, ciencia y más." />
-  <meta name="keywords" content="blog, contacto, qa, filosofía, ciencia, sociedad" />
-  <title>Inicio | Mi Sitio Personal</title>
-  <!-- Google Fonts (debería funcionar, pero verifica) -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-<!-- AOS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-<!-- Swiper -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-<script src="js/swiper-bundle.min.js"></script>
-<!-- Lottie Player -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-player/2.0.4/lottie-player.min.js"></script>
+  <meta name="description" content="Explora el mundo de las ideas con Ramses: filosofía, ciencia, sociedad y más." />
+  <meta name="keywords" content="blog, contacto, qa, filosofía, ciencia, sociedad, Ramses Vasquez" />
+  <title>Inicio | Ideas que Inspiran</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <!-- AOS -->
+  <link rel="stylesheet" href="css/aos.css" />
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="css/swiper-bundle.min.css" />
   <!-- Estilos -->
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
   <header>
     <nav class="navbar" aria-label="Navegación principal">
-      <div class="logo">Mi Sitio</div>
+      <div class="logo">Ideas que Inspiran</div>
       <ul class="nav-links">
         <li><a href="index.html" aria-current="page">Inicio</a></li>
         <li><a href="blog.html">Blog</a></li>
         <li><a href="contacto.html">Contacto</a></li>
         <li><a href="qa.html">Q&A</a></li>
       </ul>
-      <button class="hamburger" aria-label="Abrir menú">☰</button>
+      <button class="hamburger" aria-label="Abrir menú" aria-expanded="false">☰</button>
       <button class="theme-toggle" aria-label="Cambiar tema">🌙</button>
     </nav>
   </header>
 
   <section class="hero" data-aos="fade-up">
-    <div class="hero-bg"></div>
+    <div class="hero-bg" id="particles-js"></div>
     <div class="hero-content">
-      <h1 data-aos="zoom-in">Explora un Mundo de Ideas</h1>
-      <p data-aos="fade-up" data-aos-delay="200">Conecta con artículos, preguntas y reflexiones sobre filosofía, ciencia y sociedad.</p>
-      <a href="contacto.html" class="btn" data-aos="fade-up" data-aos-delay="400">Únete a la Conversación</a>
+      <h1 data-aos="zoom-in">¡Explora el Mundo de las Ideas, Ramses!</h1>
+      <p data-aos="fade-up" data-aos-delay="200">Filosofía, ciencia y sociedad en un espacio diseñado para inspirarte.</p>
+      <form id="subscribe-form" class="hero-form" data-aos="fade-up" data-aos-delay="400">
+        <input type="email" placeholder="Tu correo electrónico" required aria-label="Ingresa tu correo">
+        <button type="submit" class="btn">Únete Ahora</button>
+      </form>
     </div>
     <div class="hero-animation" id="lottie-animation"></div>
   </section>
 
   <main class="container">
-    <section class="featured" data-aos="fade-up">
-      <h2>Destacados</h2>
-      <div class="swiper-container">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <div class="card">
-              <div class="card-icon" id="lottie-contact"></div>
-              <h3>Contacto</h3>
-              <p>Envía un mensaje o haz una consulta directa.</p>
-              <a href="contacto.html" class="card-link">Ir a Contacto</a>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="card">
-              <div class="card-icon" id="lottie-blog"></div>
-              <h3>Blog</h3>
-              <p>Artículos sobre filosofía, ciencia y más.</p>
-              <a href="blog.html" class="card-link">Explorar Blog</a>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="card">
-              <div class="card-icon" id="lottie-qa"></div>
-              <h3>Preguntas y Respuestas</h3>
-              <p>Resuelve dudas o comparte las tuyas.</p>
-              <a href="qa.html" class="card-link">Ver Q&A</a>
-            </div>
-          </div>
+    <section class="about" data-aos="fade-up">
+      <h2 data-aos="zoom-in">Sobre Mí</h2>
+      <div class="about-content">
+        <div class="about-text" data-aos="fade-right">
+          <p>Hola, soy Ramses. Mi pasión es explorar las grandes preguntas de la vida a través de la filosofía, la ciencia y la sociedad. Aquí comparto ideas para inspirarte a pensar diferente y conectar con el mundo.</p>
+          <a href="contacto.html" class="btn">Conóceme Más</a>
         </div>
-        <div class="swiper-pagination"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+        <div class="about-animation" id="lottie-about" data-aos="fade-left"></div>
+      </div>
+    </section>
+
+    <section class="featured-posts" data-aos="fade-up">
+      <h2 data-aos="zoom-in">Posts Destacados</h2>
+      <div class="swiper-container" id="featured-posts" role="region" aria-label="Carrusel de posts destacados">
+        <div class="swiper-wrapper"></div>
+        <div class="swiper-pagination" aria-label="Paginación del carrusel"></div>
+        <button class="swiper-button-prev" aria-label="Diapositiva anterior"></button>
+        <button class="swiper-button-next" aria-label="Diapositiva siguiente"></button>
+      </div>
+      <a href="blog.html" class="btn center" data-aos="fade-up">Ver Todos los Posts</a>
+    </section>
+
+    <section class="testimonials" data-aos="fade-up">
+      <h2 data-aos="zoom-in">Lo que Dicen</h2>
+      <div class="testimonial-grid">
+        <div class="testimonial-card" data-aos="zoom-in" data-aos-delay="100">
+          <p>“Los artículos de Ramses me hicieron replantear cómo veo el mundo. ¡Inspirador!”</p>
+          <span>– Ana G.</span>
+        </div>
+        <div class="testimonial-card" data-aos="zoom-in" data-aos-delay="200">
+          <p>“Un espacio único para reflexionar y aprender. ¡Sigue así!”</p>
+          <span>– Carlos M.</span>
+        </div>
+        <div class="testimonial-card" data-aos="zoom-in" data-aos-delay="300">
+          <p>“La mezcla de filosofía y ciencia es fascinante. Recomiendo este sitio.”</p>
+          <span>– Laura P.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="quiz" data-aos="fade-up">
+      <h2 data-aos="zoom-in">¿Qué Tema Te Fascina?</h2>
+      <div class="quiz-content" data-aos="fade-up" data-aos-delay="200">
+        <p>Descubre qué área conecta contigo: filosofía, ciencia o sociedad.</p>
+        <div class="quiz-options">
+          <button class="quiz-btn" data-topic="filosofia">Filosofía</button>
+          <button class="quiz-btn" data-topic="ciencia">Ciencia</button>
+          <button class="quiz-btn" data-topic="sociedad">Sociedad</button>
+        </div>
+        <div id="quiz-result" class="quiz-result"></div>
       </div>
     </section>
   </main>
 
-  <footer>
-    <p>© 2025 Mi Sitio Personal</p>
+  <footer class="footer">
+    <div class="footer-content container">
+      <div class="footer-logo">
+        <div class="logo">Ideas que Inspiran</div>
+        <p>Un espacio para explorar filosofía, ciencia y sociedad.</p>
+      </div>
+      <div class="footer-links">
+        <h3>Navegación</h3>
+        <a href="index.html">Inicio</a>
+        <a href="blog.html">Blog</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="qa.html">Q&A</a>
+      </div>
+      <div class="footer-social">
+        <h3>Sígueme</h3>
+        <div class="social-icons">
+          <a href="https://twitter.com/vasquez199709" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://linkedin.com" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/rammyvasquez" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+      <form id="footer-subscribe" class="footer-form">
+        <h3>Suscríbete</h3>
+        <input type="email" placeholder="Suscríbete al boletín" required aria-label="Ingresa tu correo para suscribirte">
+        <button type="submit" class="btn">Suscribirme</button>
+      </form>
+      <p class="footer-copyright">© 2025 Ideas que Inspiran | Creado por Ramses Vasquez</p>
+    </div>
     <button class="scroll-top" aria-label="Volver arriba">↑</button>
   </footer>
 
   <!-- Scripts -->
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/swiper-bundle.min.js"></script>
+  <script src="js/lottie-player.min.js"></script>
+  <script src="js/particles.min.js"></script>
+  <script src="js/fontawesome.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

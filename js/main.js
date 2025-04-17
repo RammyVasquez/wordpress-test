@@ -1,6 +1,10 @@
 // Menú hamburguesa
 document.querySelector('.hamburger').addEventListener('click', () => {
-  document.querySelector('.nav-links').classList.toggle('active');
+  const navLinks = document.querySelector('.nav-links');
+  const hamburger = document.querySelector('.hamburger');
+  navLinks.classList.toggle('active');
+  const isExpanded = navLinks.classList.contains('active');
+  hamburger.setAttribute('aria-expanded', isExpanded);
 });
 
 // Modo oscuro
@@ -66,7 +70,6 @@ if (heroBg) {
 }
 
 // Animaciones Lottie
-// Animaciones Lottie
 function createLottiePlayer(containerId, src) {
   const container = document.getElementById(containerId);
   if (!container) return;
@@ -77,9 +80,12 @@ function createLottiePlayer(containerId, src) {
   container.appendChild(player);
 }
 
-// Cargar animaciones Lottie según la página
+// Cargar animaciones Lottie
 if (document.getElementById('lottie-animation')) {
   createLottiePlayer('lottie-animation', 'assets/animations/hero-animation.json');
+}
+if (document.getElementById('lottie-about')) {
+  createLottiePlayer('lottie-about', 'assets/animations/about-animation.json');
 }
 ['contact', 'blog', 'qa'].forEach(id => {
   if (document.getElementById(`lottie-${id}`)) {
@@ -87,6 +93,26 @@ if (document.getElementById('lottie-animation')) {
   }
 });
 
+// Inicializar Particles.js
+if (document.getElementById('particles-js')) {
+  particlesJS('particles-js', {
+    particles: {
+      number: { value: 80, density: { enable: true, value_area: 800 } },
+      color: { value: '#ffffff' },
+      shape: { type: 'circle' },
+      opacity: { value: 0.5, random: true },
+      size: { value: 3, random: true },
+      line_linked: { enable: true, distance: 150, color: '#ffffff', opacity: 0.4, width: 1 },
+      move: { enable: true, speed: 2, direction: 'none', random: true }
+    },
+    interactivity: {
+      detect_on: 'canvas',
+      events: { onhover: { enable: true, mode: 'repulse' }, onclick: { enable: true, mode: 'push' } },
+      modes: { repulse: { distance: 100, duration: 0.4 }, push: { particles_nb: 4 } }
+    },
+    retina_detect: true
+  });
+}
 // Cargar posts dinámicamente en blog.html
 if (document.getElementById('posts')) {
   fetch('assets/posts.json')
@@ -112,6 +138,64 @@ if (document.getElementById('posts')) {
     })
     .catch(error => console.error('Error al cargar posts:', error));
 }
+
+// Cargar posts destacados en index.html
+if (document.getElementById('featured-posts')) {
+  fetch('assets/posts.json')
+    .then(response => response.json())
+    .then(data => {
+      const swiperWrapper = document.querySelector('#featured-posts .swiper-wrapper');
+      data.slice(0, 3).forEach(post => {
+        swiperWrapper.innerHTML += `
+          <div class="swiper-slide">
+            <div class="card" data-aos="zoom-in">
+              <img src="${post.image}" alt="${post.title}" class="post-image">
+              <h3>${post.title}</h3>
+              <p class="post-date">${post.date}</p>
+              <p>${post.summary}</p>
+              <a href="#" class="card-link">Leer Más</a>
+            </div>
+          </div>
+        `;
+      });
+      // Reiniciar Swiper
+      const swiper = document.querySelector('#featured-posts').swiper;
+      swiper.update();
+    })
+    .catch(error => console.error('Error al cargar posts:', error));
+}
+
+// Formularios de suscripción
+const subscribeForms = document.querySelectorAll('#subscribe-form, #footer-subscribe');
+subscribeForms.forEach(form => {
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    alert('¡Gracias por suscribirte!');
+    form.reset();
+  });
+});
+
+// Mini-Test
+const quizButtons = document.querySelectorAll('.quiz-btn');
+const quizResult = document.getElementById('quiz-result');
+quizButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const topic = button.dataset.topic;
+    let result = '';
+    switch (topic) {
+      case 'filosofia':
+        result = '¡La filosofía es tu pasión! Explora grandes preguntas en mi blog.';
+        break;
+      case 'ciencia':
+        result = '¡La ciencia te llama! Descubre avances y reflexiones en mis posts.';
+        break;
+      case 'sociedad':
+        result = '¡La sociedad te inspira! Lee sobre cultura y conexiones humanas.';
+        break;
+    }
+    quizResult.textContent = result;
+  });
+});
 
 // Formulario de contacto en contacto.html
 const contactForm = document.querySelector('#contact-form');
